@@ -1,0 +1,44 @@
+<!--Use CSS to create a basic image gallery
+with thumbnail images that enlarge
+when clicked.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="container">
+        <h1>Image Gallery</h1>
+    <div class="image-container">
+        <div class="image"><img src="images/image1.jpg" alt="image not found!"></div>
+        <div class="image"><img src="images/image2.jpg" alt="image not found!"></div>
+        <div class="image"><img src="images/image3.jpg" alt="image not found!"></div>
+        <div class="image"><img src="images/image4.jpg" alt="image not found!"></div>
+        <div class="image"><img src="images/image5.jpg" alt="image not found!"></div>
+        <div class="image"><img src="images/image6.jpg" alt="image not found!"></div>
+    </div>
+    <div class="popup-image">
+        <span> &times;</span>
+        <img src="image1.jpg" alt="image not found">
+    </div>
+    </div> 
+    <script>
+
+document.querySelectorAll('.image-container img').forEach(image => {
+    image.onclick = () => {
+        document.querySelector('.popup-image').style.display = 'block';
+        document.querySelector('.popup-image img').src = image.getAttribute('src');
+    }
+});
+
+document.querySelector('.popup-image span').onclick = () => {
+    document.querySelector('.popup-image').style.display = 'none';
+};
+
+    </script>
+</body>
+</html>
